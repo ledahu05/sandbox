@@ -1,4 +1,0 @@
-name = testgit
-description = test git
-core = 7.x
-package = ledahu
