@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">    
+    </script>
+    
+    <script src="js/jquery.toolbar.js"></script>
+    <script src="js/script.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src='http://lovasoa.github.io/tidy-html5/tidy.js'></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="css/jquery.toolbar.css" rel="stylesheet" />
+    
+  <title>Bootstrap Editor</title>
+</head>
+<body>
+<div class="toolbar" id="mainToolbar">
+  <a href="#" data-command='bold'><i class='fa fa-bold'></i></a>
+</div>
+
+<div class="markup" >
+  
+
+</div>
+
+
+
+  
+  <div class="modal fade" id="mainModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+        </div>
+        <div class="modal-body">
+          <div class='editBlock'>
+            <div class='addLine'>
+               <img src="assets/plus.png" class="short img-responsive">
+            </div>
+          </div>          
+        </div>
+
+      <div class="modal-footer">
+        <button type="button" id="closeMainModal" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="okMainModal" class="btn btn-primary">Get HTML</button>
+      </div>
+    </div>
+      
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add a new row</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <img src="assets/col-12.png" class="short img-responsive grid" data-command="12">
+                <img src="assets/col-3.png" class="short img-responsive grid" data-command="3">
+            </div>
+          
+        </div>
+
+      <div class="modal-footer">
+        <button type="button" id="closeModal" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="saveModal" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+      
+    </div>
+  </div>
+
+  
+  
+
+
+<div id="rowToolbarWrapper" contenteditable="false" >
+  <div class="rowToolbar" contenteditable="false">
+    <div class='col-md-9 toolbar' id="commonTool" contenteditable="false">    
+      <a href="#" data-command='undo'><i class='fa fa-undo'></i></a>
+      <a href="#" data-command='redo'><i class="fas fa-redo"></i></a>
+      <div class="fore-wrapper"><i class='fa fa-font' style='color:#C96;'></i>
+        <div class="fore-palette">
+        </div>
+      </div>
+      <div class="back-wrapper"><i class='fa fa-font' style='background:#C96;'></i>
+        <div class="back-palette">
+        </div>
+      </div>
+      <a href="#" data-command='bold'><i class='fa fa-bold'></i></a>
+      <a href="#" data-command='italic'><i class='fa fa-italic'></i></a>
+      <a href="#" data-command='underline'><i class='fa fa-underline'></i></a>
+      <a href="#" data-command='strikeThrough'><i class='fa fa-strikethrough'></i></a>
+      <a href="#" data-command='justifyLeft'><i class='fa fa-align-left'></i></a>
+      <a href="#" data-command='justifyCenter'><i class='fa fa-align-center'></i></a>
+      <a href="#" data-command='justifyRight'><i class='fa fa-align-right'></i></a>
+      <a href="#" data-command='justifyFull'><i class='fa fa-align-justify'></i></a>
+      <a href="#" data-command='indent'><i class='fa fa-indent'></i></a>
+      <a href="#" data-command='outdent'><i class='fa fa-outdent'></i></a>
+      <a href="#" data-command='insertUnorderedList'><i class='fa fa-list-ul'></i></a>
+      <a href="#" data-command='insertOrderedList'><i class='fa fa-list-ol'></i></a>
+      <a href="#" data-command='h1'>H1</a>
+      <a href="#" data-command='h2'>H2</a>
+      <a href="#" data-command='createlink'><i class='fa fa-link'></i></a>
+      <a href="#" data-command='unlink'><i class='fa fa-unlink'></i></a>
+      <a href="#" data-command='insertimage'><i class='fa fa-image'></i></a>
+      <a href="#" data-command='p'>P</a>
+      <a href="#" data-command='subscript'><i class='fa fa-subscript'></i></a>
+      <a href="#" data-command='superscript'><i class='fa fa-superscript'></i></a>
+    </div>
+    <div class='col-md-3 rowbar'id="rowTool">
+      <a class='col-xs-3' href="#" data-command='copy'><i class="fas fa-copy"></i></a>
+      <a class='col-xs-3' href="#" data-command='delete'><i class="fas fa-trash"></i></a>
+      <a class='col-xs-3' href="#" data-command='up'><i class='fas fa-arrow-up'></i></a>
+      <a class='col-xs-3' href="#" data-command='down'><i class="fas fa-arrow-down"></i></a>
+    </div>
+  </div>
+</div>
+
+<div id="toolbar-options" class="hidden">
+   <a href="#"><i class="fas fa-copy"></i></a>
+   <a href="#"><i class="fas fa-trash"></i></a>
+   <a href="#"><i class='fas fa-arrow-up'></i></a>
+   <a href="#"><i class="fas fa-arrow-down"></i></a>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="cellSettingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog"> 
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+
+                </button>
+                 <h4 class="modal-title" id="myModalLabel">Row layout</h4>
+
+            </div>
+            <div class="modal-body">
+                <div role="tabpanel">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#uploadTab" aria-controls="uploadTab" role="tab" data-toggle="tab">Edit the column</a>
+
+                        </li>
+                        <li role="presentation"><a href="#browseTab" aria-controls="browseTab" role="tab" data-toggle="tab">Advanced</a>
+
+                        </li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="uploadTab">
+                          <div style="width:1000px">
+                            <div>
+                              <div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" id="xs_layout">
+                                    xs
+                                  </label> 
+                                </div>
+                                <button class="btn_xs btn_number">1</button>
+                                <button class="btn_xs btn_number">2</button>
+                                <button class="btn_xs btn_number">3</button>
+                                <button class="btn_xs btn_number">4</button>
+                                <button class="btn_xs btn_number">5</button>
+                                <button class="btn_xs btn_number">6</button>
+                                <button class="btn_xs btn_number">7</button>
+                                <button class="btn_xs btn_number">8</button>
+                                <button class="btn_xs btn_number">9</button>
+                                <button class="btn_xs btn_number">10</button>
+                                <button class="btn_xs btn_number">11</button>
+                                <button class="btn_xs btn_number">12</button>
+                              </div>
+                              <div>
+                                <div class="checkbox">
+                                  <label class="active">
+                                    <input type="checkbox" id="sm_layout">
+                                    sm
+                                  </label> 
+                                </div>
+                                <button class="btn_sm btn_number">1</button>
+                                <button class="btn_sm btn_number">2</button>
+                                <button class="btn_sm btn_number">3</button>
+                                <button class="btn_sm btn_number">4</button>
+                                <button class="btn_sm btn_number">5</button>
+                                <button class="btn_sm btn_number">6</button>
+                                <button class="btn_sm btn_number">7</button>
+                                <button class="btn_sm btn_number">8</button>
+                                <button class="btn_sm btn_number">9</button>
+                                <button class="btn_sm btn_number">10</button>
+                                <button class="btn_sm btn_number">11</button>
+                                <button class="btn_sm btn_number">12</button>
+                              </div> 
+                              <div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" id="md_layout">
+                                    md
+                                  </label> 
+                                </div>
+                                <button class="btn_md btn_number">1</button>
+                                <button class="btn_md btn_number">2</button>
+                                <button class="btn_md btn_number">3</button>
+                                <button class="btn_md btn_number">4</button>
+                                <button class="btn_md btn_number">5</button>
+                                <button class="btn_md btn_number">6</button>
+                                <button class="btn_md btn_number">7</button>
+                                <button class="btn_md btn_number">8</button>
+                                <button class="btn_md btn_number">9</button>
+                                <button class="btn_md btn_number">10</button>
+                                <button class="btn_md btn_number">11</button>
+                                <button class="btn_md btn_number">12</button>
+                              </div>                                                           
+                            </div>
+                          </div>
+                        </div>
+
+                        
+                        <div role="tabpanel" class="tab-pane" id="browseTab">Advanced</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="closeCellSettings" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" id="saveCellSettings" class="btn btn-primary">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

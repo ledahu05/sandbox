@@ -1,0 +1,162 @@
+body {
+  margin: 0 auto;
+  width: 600px;
+  font-family: 'Dosis';
+}
+
+a {
+  cursor: pointer;
+}
+
+.editor {
+  box-shadow: 0 0 2px #CCC;
+  min-height: 150px;
+  overflow: auto;
+  padding: 1em;
+  margin-top: 20px;
+  resize: vertical;
+  outline: none;
+}
+
+.toolbar {
+  text-align: left;
+}
+
+.rowbar {
+ text-align: right; 
+ padding-top: 20px;
+}
+
+.toolbar a,
+.fore-wrapper,
+.back-wrapper {
+  border: 1px solid #AAA;
+  background: #FFF;
+  font-family: 'Candal';
+  border-radius: 1px;
+  color: black;
+  padding: 5px;
+  width: 1.5em;
+  margin: -2px;
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  box-shadow: 0px 1px 0px #CCC;
+}
+
+.toolbar a:hover,
+.fore-wrapper:hover,
+.back-wrapper:hover {
+  background: #f2f2f2;
+  border-color: #8c8c8c;
+}
+
+a[data-command='redo'],
+a[data-command='strikeThrough'],
+a[data-command='justifyFull'],
+a[data-command='insertOrderedList'],
+a[data-command='outdent'],
+a[data-command='p'],
+a[data-command='superscript'] {
+  margin-right: 5px;
+  border-radius: 0 3px 3px 0;
+}
+
+a[data-command='undo'],
+.fore-wrapper,
+a[data-command='justifyLeft'],
+a[data-command='insertUnorderedList'],
+a[data-command='indent'],
+a[data-command='h1'],
+a[data-command='subscript'] {
+  border-radius: 3px 0 0 3px;
+}
+
+a.palette-item {
+  height: 1em;
+  border-radius: 3px;
+  margin: 2px;
+  width: 1em;
+  border: 1px solid #CCC;
+}
+
+a.palette-item:hover {
+  border: 1px solid #CCC;
+  box-shadow: 0 0 3px #333;
+}
+
+.fore-palette,
+.back-palette {
+  display: none;
+}
+
+.fore-wrapper,
+.back-wrapper {
+  display: inline-block;
+  cursor: pointer;
+}
+
+
+#rowToolbarWrapper {
+    display: none; 
+}
+
+
+.fore-wrapper:hover .fore-palette,
+.back-wrapper:hover .back-palette {
+  display: block;
+  float: left;
+  position: absolute;
+  padding: 3px;
+  width: 160px;
+  background: #FFF;
+  border: 1px solid #DDD;
+  box-shadow: 0 0 5px #CCC;
+  height: 70px;
+}
+
+.fore-palette a,
+.back-palette a {
+  background: #FFF;
+  margin-bottom: 2px;
+}
+
+ .short {
+        max-width: 130px !important;
+        margin: 0 auto;
+  }
+
+  #rowEditWrapper {
+    width: 100px;
+  }
+
+  .edit {
+
+  }
+
+  .settings {
+     position: absolute;
+    top: 0px;
+    right: 10px;
+  }
+
+  .modal-backdrop {
+    visibility: hidden !important;
+  }
+
+  .modal.in {
+      background-color: rgba(0,0,0,0.5);
+  }
+
+
+
+button.btn_number.active, button.btn_number:active, button.btn_number:focus, button.btn_number:target, button.btn_number:active:focus {
+    color: #FFF;
+    outline: none;
+    box-shadow: none;
+    background-color: #FF9900;
+    border-color: #FF9900;
+}
+
+
+ 

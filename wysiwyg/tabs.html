@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">    
+    </script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
+  <title>Bootstrap Editor</title>
+</head>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Launch demo modal</button>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+
+                </button>
+                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+
+            </div>
+            <div class="modal-body">
+                <div role="tabpanel">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#uploadTab" aria-controls="uploadTab" role="tab" data-toggle="tab">Upload</a>
+
+                        </li>
+                        <li role="presentation"><a href="#browseTab" aria-controls="browseTab" role="tab" data-toggle="tab">Browse</a>
+
+                        </li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="uploadTab">upload Tab</div>
+                        <div role="tabpanel" class="tab-pane" id="browseTab">browseTab</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary save">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="cellSettingsModal" tabindex="-1" role="dialog" aria-labelledby="cellSettingsModal" aria-hidden="true">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Bootstrap col settings</h4>
+        </div>
+        <div class="modal-body">
+          <div role="tabpanel">
+              <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#uploadTab" aria-controls="uploadTab" role="tab" data-toggle="tab">Upload<a>
+              </li>
+              <li role="presentation">
+                <a href="#browseTab" aria-controls="browseTab" role="tab" data-toggle="tab">Browse</a>
+              </li>
+            </ul>
+                    <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="uploadTab">upload Tab</div>
+              <div role="tabpanel" class="tab-pane" id="browseTab">browseTab</div>
+            </div>
+          </div>
+        </div>
+
+      <div class="modal-footer">
+        <button type="button" id="closeCellSettings" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="saveCellSettings" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+      
+    </div>
+  </div>
+
+  <div class="jsplus_ui_config_editor_field_value" style="width:1000px">
+    <div>
+        <div class="jsplus_theme jsplus_ui_bootstrap_input_col_width">
+            <div class="jsplus_theme jsplus_ui_checkbox">
+                <input type="checkbox" id="checkbox-7">
+                    <label for="checkbox-7" class="jsplus_theme_no_text jsplus_theme_no_select"></label>
+            </div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_ui_bootstrap_input_col_width_filled">1</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_ui_bootstrap_input_col_width_filled">2</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_ui_bootstrap_input_col_width_filled">3</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_ui_bootstrap_input_col_width_filled">4</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_ui_bootstrap_input_col_width_filled">5</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_ui_bootstrap_input_col_width_filled">6</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_ui_bootstrap_input_col_width_filled jsplus_selected">7</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover">8</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover">9</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover">10</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover">11</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover">12</div>
+        </div>
+        <div class="jsplus_theme jsplus_ui_bootstrap_input_col_width">
+            <div class="jsplus_theme jsplus_ui_checkbox">
+                <input type="checkbox" id="checkbox-8">
+                <label for="checkbox-8" class="jsplus_theme_no_text jsplus_theme_no_select"></label>
+            </div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_a_la_disabled jsplus_ui_bootstrap_input_col_width_filled jsplus_selected">0</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_a_la_disabled">1</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_a_la_disabled">2</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_a_la_disabled">3</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_a_la_disabled">4</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_a_la_disabled">5</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_a_la_disabled">6</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_a_la_disabled">7</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_a_la_disabled">8</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_a_la_disabled">9</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_a_la_disabled">10</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_a_la_disabled">11</div>
+            <div class="jsplus_ui_button jsplus_ui_button_text jsplus_ui_button_manual_hover jsplus_a_la_disabled">12</div>
+        </div>
+
+        <div class="jsplus_theme jsplus_ui_checkbox"><input type="checkbox" id="checkbox-9"><label for="checkbox-9" class="jsplus_theme_no_text jsplus_theme_no_select" style="padding-top:3px"></label><style type="text/css">.jsplus_theme input[type=checkbox]#checkbox-9 + label { background-image: url(https://js.plus/js-demo/ckeditor/plugins/jsplusBootstrapEditor/theme/flat-blue/img/visible-off.png )}.jsplus_theme input[type=checkbox]#checkbox-9:checked + label { background-image: url(https://js.plus/js-demo/ckeditor/plugins/jsplusBootstrapEditor/theme/flat-blue/img/visible-on.png )}</style></div></div></div>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
